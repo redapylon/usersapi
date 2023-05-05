@@ -1,4 +1,4 @@
-##Fastify API - Lista de usuarios
+## Fastify API - Lista de usuarios
 
 Este servidor ha sido creado con Fastify, un framework web para Node.js que está diseñado para ser rápido y escalable.
 
