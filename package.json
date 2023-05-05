@@ -1,0 +1,30 @@
+{
+  "name": "usersapi",
+  "version": "1.0.0",
+  "description": "API de consulta y alta  de usuarios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "fastify start -l info index.js",
+    "dev": "fastify start -l info -P index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redapylon/usersapi.git"
+  },
+  "author": "Reda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redapylon/usersapi/issues"
+  },
+  "homepage": "https://github.com/redapylon/usersapi#readme",
+  "dependencies": {
+    "@fastify/autoload": "^5.7.1",
+    "@fastify/env": "^4.2.0",
+    "@fastify/sensible": "^5.2.0",
+    "@fastify/swagger": "^8.3.1",
+    "@fastify/swagger-ui": "^1.8.0",
+    "fastify": "^4.17.0",
+    "fastify-cli": "^5.7.1"
+  }
+}
