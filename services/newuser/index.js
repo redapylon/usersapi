@@ -1,21 +1,23 @@
-// index.js
-'use strict'
+'use strict';
 const fs = require('fs').promises;
 
-//Print dir file content
-
-//Get users async functions for dirfile content display
-
-async function newUsers() {
-
-  console.log('newUsers ...');
+// Function to add new user from JSON file and return the new user list
+async function newUsers(newUser) {
+  console.log('Loading new user list...');
   const data = await fs.readFile('./data/usuarios.json', 'utf8');
-  const users = JSON.parse(data);
-//Add new user named Jorge with id 4 mail jorge@jorge.com and surname Gonzalez 
-    users.push({id:4, nombre:'Jorge', apellido:'Gonzalez', email:'jorge@example.com'});
-
-
-
+  console.log('data:', data);
+  const users = data ? JSON.parse(data).usuarios : [];
+  console.log('users:', users);
+  const updatedUsers = [...users, newUser];
+  console.log('new users:', updatedUsers);
+  
+  // Write updated user list back to file
+  await fs.writeFile('./data/usuarios.json', JSON.stringify({ usuarios: updatedUsers }, null, 2));
+  
+  // Return updated user list
+  console.log('')
+  return ('New User List'+JSON.stringify(updatedUsers));
+  
 }
 
 module.exports = { newUsers };

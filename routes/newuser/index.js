@@ -11,8 +11,8 @@ const { newUsersHandler, newUsersRouteOptions } = require('../../handlers/newuse
 async function usersRouter(fastify, opts) {
     console.log('UsersRouter ...')
     // Alarmas
-    fastify.get('/newuser', newUsersRouteOptions, newUsersHandler)
-
+  // POST route for the /newuser endpoint
+  fastify.post('/', newUsersRouteOptions, newUsersHandler)
 
 }
 module.exports = usersRouter
